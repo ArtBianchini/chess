@@ -37,6 +37,11 @@ class Pawn < Piece
     return delta_y <= 2 if (self.color == 1 && y_position == 1) || (self.color == 2 && y_position == 6)
     return false 
   end
+  def move_one?(x,y)
+    delta_x = (x - self.x_position).abs
+    delta_y = (y - self.y_position).abs
+    return delta_y <= 1 #after the first move the pawn should move only once
+  end 
 end
 
 
